@@ -17,4 +17,12 @@ $ npm run start
 $ npm run generate
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+## Introduction
+
+#### Use hoshimiru API
+- https://hoshimiru.docs.apiary.io/#reference/0/0
+- example... https://livlog.xyz/hoshimiru/constellation?lat=35.6581&lng=139.7414&date=2020-01-15&hour=20&min=00
+
+#### Use UI Framework
+- TailwindCSS
+  - https://tailwindcss.com/
