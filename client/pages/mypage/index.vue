@@ -4,12 +4,15 @@
   <p v-for="(item, i) in array" :key="i">
     {{item}}
   </p>
+  <p>{{$auth.user}}</p>
+  <button @click="logout">logout</button>
 </div>
 </template>
 
 <script lang="ts">
 import axios from "axios"
 export default {
+  middleware: "auth",
   data() {
     return {
       array: []
@@ -22,6 +25,11 @@ export default {
       this.array = res.data.Result
     })
   },
+  methods: {
+    logout() {
+      this.$auth.logout()
+    }
+  }
 }
 </script>
 
