@@ -1,34 +1,38 @@
 <template>
 <div>
-  mypage
-  <p v-for="(item, i) in array" :key="i">
-    {{item}}
-  </p>
-  <p>{{$auth.user}}</p>
-  <button @click="logout">logout</button>
+  <Header />
+  <Profile :currentUser="$auth.user" :items="array" />
 </div>
 </template>
 
 <script lang="ts">
 import axios from "axios"
-export default {
-  middleware: "auth",
-  data() {
-    return {
-      array: []
-    }
-  },
+import auth from "nuxt.config"
+import Header from '../../components/organisms/Header.vue'
+import Profile from '../../components/organisms/Profile.vue'
+import {
+  Component,
+  Vue
+} from "nuxt-property-decorator"
+@Component({
+  components: {
+    Header,
+    Profile
+  }
+})
+export default class MyPage extends Vue {
+  array = []
+
   async mounted() {
     const baseUrl = 'http://localhost:3000/api'
     const getUrl = encodeURI(baseUrl)
     await axios.get(getUrl).then(res => {
       this.array = res.data.Result
     })
-  },
-  methods: {
-    logout() {
-      this.$auth.logout()
-    }
+  }
+
+  logout() {
+    this.$auth.logout()
   }
 }
 </script>

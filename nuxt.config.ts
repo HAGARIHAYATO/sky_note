@@ -65,7 +65,7 @@ export default {
 
   auth: {
     redirect: {
-      login: '/session/login',
+      login: '/',
       logout: '/',
       callback: '/callback',
       home: '/mypage'
