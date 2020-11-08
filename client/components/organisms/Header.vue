@@ -3,7 +3,6 @@
   <div><img src="/sky_note.png" class="h-12"></div>
   <div class="flex">
     <nav-link linkUrl="/" linkName="TOP画面" />
-    <nav-link linkUrl="/stars" linkName="星座一覧" />
     <template v-if="!$auth.user">
       <nav-btn :clickFunc="login" linkName="ログイン" />
     </template>
