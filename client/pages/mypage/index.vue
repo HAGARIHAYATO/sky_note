@@ -18,19 +18,19 @@ import {
   components: {
     Header,
     Profile
-  }
-})
-export default class MyPage extends Vue {
-  array = []
-
-  async mounted() {
+  },
+  async asyncData({
+    $axios
+  }) {
     const baseUrl = 'http://localhost:3000/api'
     const getUrl = encodeURI(baseUrl)
-    await axios.get(getUrl).then(res => {
-      this.array = res.data.Result
-    })
-  }
-
+    const array = await $axios.$get(getUrl)
+    return {
+      array: array.Result
+    }
+  },
+})
+export default class MyPage extends Vue {
   logout() {
     this.$auth.logout()
   }

@@ -77,6 +77,8 @@ export default {
     }
   },
 
+  tailwindcss: {},
+
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
   }
