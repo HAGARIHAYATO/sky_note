@@ -12,6 +12,7 @@ import {
   Component,
   Vue
 } from 'nuxt-property-decorator'
+import auth from 'nuxt.config'
 import Header from '../../components/organisms/Header.vue'
 import ConstellationList from '../../components/templates/ConstellationList.vue'
 @Component({
@@ -42,6 +43,26 @@ import ConstellationList from '../../components/templates/ConstellationList.vue'
 export default class StarIndex extends Vue {
   q ? = this.$route.query
   array ? = []
+  // public async automaticReload() {
+  //   const baseUrl = "https://livlog.xyz/hoshimiru/constellation"
+  //   const getUrl = encodeURI(baseUrl)
+  //   await setTimeout(() => {
+  //     console.log("now")
+  //     this.$axios.$get(getUrl, {
+  //       params: this.$route.query
+  //     }).then(res => {
+  //       this.array = res.result
+  //     }).catch(e => {
+  //       console.error(e)
+  //       this.automaticReload()
+  //     })
+  //   }, 50000)
+  // }
+  // private async mounted() {
+  //   if (this.array!.length === 0) {
+  //     this.automaticReload()
+  //   }
+  // }
   public async saveDateString() {
     // TODO date save DB via server
   }
