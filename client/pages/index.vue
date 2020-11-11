@@ -10,6 +10,7 @@
 import Vue from 'vue'
 import Header from '../components/organisms/Header.vue'
 import SearchStars from '../components/templates/SearchStars.vue'
+import auth from 'nuxt.config'
 export default Vue.extend({
   auth: false,
   components: {
