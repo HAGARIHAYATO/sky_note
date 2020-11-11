@@ -1,4 +1,6 @@
 import express from "express"
+const initializer = require("../config/database")
+const db = initializer.firestoreInit()
 
 module.exports = {
   getIndex: function() {
