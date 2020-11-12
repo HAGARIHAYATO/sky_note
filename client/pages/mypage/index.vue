@@ -20,11 +20,16 @@ import {
     Profile
   },
   async asyncData({
-    $axios
+    $axios,
+    $auth
   }) {
     const baseUrl = 'http://localhost:3000/api'
-    const getUrl = encodeURI(baseUrl)
-    const array = await $axios.$get(getUrl)
+    const getUrl = encodeURI(baseUrl + '/stars')
+    const array = await $axios.$get(getUrl, {
+      params: {
+        user_sub: $auth.user.sub
+      }
+    })
     return {
       array: array.Result
     }

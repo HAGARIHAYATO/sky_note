@@ -2,7 +2,7 @@
 <div>
   <Header />
   <h2 v-if="q.date" class="text-center font-bold text-xl my-10">{{q.date}} {{q.hour}}h {{q.min}}m の星空</h2>
-  <button v-if="$auth.user && array.length > 0" @click="saveDateString" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-1 px-16 rounded focus:outline-none block mx-auto">この星空を保存する</button>
+  <button v-if="$auth.user && array.length > 0" @click="saveDateObject" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-1 px-16 rounded focus:outline-none block mx-auto">この星空を保存する</button>
   <constellation-list v-if="q.date" :list="array" />
 </div>
 </template>
@@ -63,8 +63,17 @@ export default class StarIndex extends Vue {
   //     this.automaticReload()
   //   }
   // }
-  public async saveDateString() {
-    // TODO date save DB via server
+  public async saveDateObject() {
+    this.q!.user_sub = this.$auth.user.sub
+    const baseUrl = "http://localhost:3000/api/stars"
+    const getUrl = encodeURI(baseUrl)
+    this.$axios.$post(getUrl, {
+      params: this.q
+    }).then(res => {
+      console.log(res.Result)
+    }).catch(err => {
+      console.error(err)
+    })
   }
 }
 </script>

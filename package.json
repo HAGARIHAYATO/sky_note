@@ -13,10 +13,13 @@
     "@nuxtjs/auth": "^4.9.1",
     "@nuxtjs/axios": "^5.12.2",
     "@nuxtjs/dotenv": "^1.4.1",
+    "@types/firebase": "^3.2.1",
+    "body-parser": "^1.19.0",
     "core-js": "^3.6.5",
     "nanoid": "^2.1.11",
     "nuxt": "^2.14.6",
-    "nuxt-property-decorator": "^2.8.8"
+    "nuxt-property-decorator": "^2.8.8",
+    "stripe": "^8.121.0"
   },
   "devDependencies": {
     "@nuxt/types": "^2.14.6",
