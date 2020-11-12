@@ -18,6 +18,7 @@ import {
 } from "nuxt-property-decorator"
 import SaveDate from '../atmos/SaveDate.vue'
 import AddedDate from '../atmos/AddedDate.vue'
+import { IStar } from "*.vue";
 @Component({
   components: {
     SaveDate,
@@ -27,10 +28,10 @@ import AddedDate from '../atmos/AddedDate.vue'
 export default class IndexDate extends Vue {
   @Prop({
     required: true
-  }) items!: [];
+  }) items!: Array<IStar>;
 
   isOpen = false
-  array = []
+  array: Array<IStar> = []
   mounted() {
     this.onChangeIsOpen()
   }

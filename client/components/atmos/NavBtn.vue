@@ -1,6 +1,6 @@
 <template>
-<div class="border-b-4 border-gray-400 py-2 mx-4 hover:border-black transition-all duration-200">
-  <button @click.stop="clickFunc" class="ml-6 focus:outline-none">{{linkName}}</button>
+<div @click.stop="clickFunc" class="border-b-4 border-gray-400 py-2 mx-4 hover:border-black transition-all duration-200">
+  <button class="ml-6 focus:outline-none">{{linkName}}</button>
 </div>
 </template>
 

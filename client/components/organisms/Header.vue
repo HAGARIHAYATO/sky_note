@@ -21,6 +21,7 @@ import {
 } from "nuxt-property-decorator"
 import NavLink from '../atmos/NavLink.vue'
 import NavBtn from '../atmos/NavBtn.vue'
+import auth from 'nuxt.config'
 @Component({
   components: {
     NavLink,

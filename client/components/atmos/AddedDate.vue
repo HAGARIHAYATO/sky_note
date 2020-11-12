@@ -5,6 +5,7 @@
 </template>
 
 <script lang="ts">
+import {IQuery} from "*.vue";
 import {
   Component,
   Vue,
@@ -14,7 +15,7 @@ import {
 export default class AddedDate extends Vue {
   @Prop({
     required: true
-  }) item!: any;
+  }) item!: IQuery;
   urlQuery = "?" + "lat=" + this.item.lat + "&lng=" + this.item.lng + "&date=" + this.item.date + "&hour=" + this.item.hour + "&min=" + this.item.min
 }
 </script>

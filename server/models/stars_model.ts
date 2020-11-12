@@ -24,9 +24,9 @@ module.exports = {
         hour: obj.hour,
         min: obj.min,
         user_sub: obj.user_sub
-      }).then((res) => {
-        const doc = res.get()
-        return doc.data()
+      }).then((doc: any) => {
+        console.log(doc)
+        return doc.id
       }).catch(err => {
         console.error(err)
       })

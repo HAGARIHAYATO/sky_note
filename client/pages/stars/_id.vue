@@ -1,20 +1,24 @@
 <template>
 <div>
   <Header />
+  <commentary :item="item"/>
 </div>
 </template>
 
 <script lang="ts">
 import Header from '../../components/organisms/Header.vue'
+import Commentary from '../../components/templates/Commentary.vue'
 import {
   Component,
   Vue
 } from 'nuxt-property-decorator'
+import { IStar, Result } from '*.vue'
 @Component({
   auth: false,
   middleware: ["query"],
   components: {
-    Header
+    Header,
+    Commentary
   },
   async asyncData({
     $axios,
@@ -25,11 +29,11 @@ import {
     const getUrl = encodeURI(baseUrl)
     return await $axios.$get(getUrl, {
       params: query
-    }).then(res => {
+    }).then((res: Result) => {
       return {
         item: res.result[0]
       }
-    }).catch(err => {
+    }).catch((err: Error) => {
       console.error(err)
     })
   }

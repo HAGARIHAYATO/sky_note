@@ -10,6 +10,7 @@
 </template>
 
 <script lang="ts">
+import { IStar } from "*.vue";
 import {
   Component,
   Vue,
@@ -24,6 +25,6 @@ import StarCard from '../molecules/StarCard.vue'
 export default class ConstellationList extends Vue {
   @Prop({
     required: true
-  }) list!: any[];
+  }) list!: Array<IStar>;
 }
 </script>

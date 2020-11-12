@@ -11,6 +11,7 @@
 </template>
 
 <script lang="ts">
+import { IQuery, IStar } from "*.vue";
 import {
   Component,
   Vue,
@@ -20,7 +21,7 @@ import {
 export default class StarCard extends Vue {
   @Prop({
     required: true
-  }) item!: any;
+  }) item!: IStar;
   q = this.$route.query
   urlQuery = "?" + "lat=" + this.q.lat + "&lng=" + this.q.lng + "&date=" + this.q.date + "&hour=" + this.q.hour + "&min=" + this.q.min + "&id=" + this.item.id
 }

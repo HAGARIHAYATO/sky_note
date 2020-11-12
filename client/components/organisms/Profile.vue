@@ -13,6 +13,7 @@ import {
 } from "nuxt-property-decorator"
 import IndexDate from '../molecules/IndexDate.vue'
 import IconBar from '../atmos/IconBar.vue'
+import { IStar, IUser } from "*.vue";
 @Component({
   components: {
     IndexDate
@@ -21,10 +22,10 @@ import IconBar from '../atmos/IconBar.vue'
 export default class Profile extends Vue {
   @Prop({
     required: true
-  }) currentUser!: object;
+  }) currentUser!: IUser;
   @Prop({
     required: true
-  }) items!: [];
+  }) items!: Array<IStar>;
 }
 </script>
 

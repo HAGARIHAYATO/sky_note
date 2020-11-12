@@ -6,6 +6,7 @@
 </template>
 
 <script lang="ts">
+import { IUser } from "*.vue";
 import {
   Component,
   Vue,
@@ -15,7 +16,7 @@ import {
 export default class IconBar extends Vue {
   @Prop({
     required: true
-  }) currentUser!: object;
+  }) currentUser!: IUser;
 }
 </script>
 

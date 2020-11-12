@@ -1,7 +1,9 @@
 <template>
-<div class="border-b-4 border-gray-400 py-2 mx-4 hover:border-black transition-all duration-200">
-  <nuxt-link :to="linkUrl" class="ml-6">{{linkName}}</nuxt-link>
-</div>
+<nuxt-link :to="linkUrl" class="border-b-4 border-gray-400 py-2 mx-4 hover:border-black transition-all duration-200">
+  <div class="ml-6">
+    {{linkName}}
+  </div>
+</nuxt-link>
 </template>
 
 <script lang="ts">
