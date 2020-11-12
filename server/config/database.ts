@@ -1,5 +1,5 @@
-require("firebase/firestore");
-const firebase = require("firebase");
+import firebase from "firebase";
+
 
 module.exports = {
   firestoreInit: function() {

@@ -3,12 +3,32 @@ const initializer = require("../config/database")
 const db = initializer.firestoreInit()
 
 module.exports = {
-  getIndex: function() {
-    const array = [
-      {lat: "0", lng: "0", date :"XXXX-XX-XX", hour: "20", min: "00"},
-      {lat: "65", lng: "20", date :"YYYY-YY-YY", hour: "20", min: "00"},
-      {lat: "-30", lng: "40", date :"ZZZZ-ZZ-ZZ", hour: "20", min: "00"}
-    ]
-    return array
+  getIndex: function(params: any): Array<any> {
+    return db.collection("stars")
+    .where('user_sub', '==', params.user_sub)
+    .get()
+    .then(starArray => {
+      const array = starArray.docs.map(doc => doc.data());
+      return array
+    }).catch(err => {
+      console.error(err)
+    })
+  },
+  insert: async function(obj: any) {
+    let dbStars = db.collection("stars");
+    return await dbStars
+      .add({
+        lat: obj.lat,
+        lng: obj.lng,
+        date: obj.date,
+        hour: obj.hour,
+        min: obj.min,
+        user_sub: obj.user_sub
+      }).then((res) => {
+        const doc = res.get()
+        return doc.data()
+      }).catch(err => {
+        console.error(err)
+      })
   }
 }
