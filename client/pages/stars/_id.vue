@@ -1,6 +1,7 @@
 <template>
 <div>
   <Header />
+  <h2 class="text-center font-bold text-xl my-10">星座解説</h2>
   <commentary :item="item"/>
 </div>
 </template>
