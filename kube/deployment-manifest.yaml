@@ -6,15 +6,15 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: sky_note
+      app: sky-note
   template:
     metadata:
       labels:
-        app: sky_note
+        app: sky-note
     spec:
       containers:
-        - name: nuxt-app
-          image: gcr.io/kubernetes-practice-293800/sky_note:latest
+        - name: sky-note
+          image: gcr.io/kubernetes-practice-293800/sky-note:latest
           ports:
             - containerPort: 3000
           args: ["npm", "run", "dev"]
