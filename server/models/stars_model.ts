@@ -15,7 +15,7 @@ module.exports = {
       console.error(err)
     })
   },
-  insert: async function(obj: IQuery) {
+  insert: async function(obj: IQuery): Promise<IResID | Error> {
     let dbStars = db.collection("stars");
     return await dbStars
       .add({
