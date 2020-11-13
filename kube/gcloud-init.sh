@@ -1,7 +1,7 @@
 #!/bin/bash
 export PROJECT_ID=kubernetes-practice-293800
 export MY_ZONE=us-central1-c
-gcloud builds submit --tag gcr.io/${PROJECT_ID}/sky-note .
+gcloud builds submit --tag gcr.io/${PROJECT_ID}/sky-note:v1 .
 gcloud container clusters create sky-note \
   --num-nodes 1 \
   --enable-basic-auth \
