@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: sky-note
-          image: gcr.io/kubernetes-practice-293800/sky-note:latest
+          image: gcr.io/kubernetes-practice-293800/sky-note:v1
           ports:
             - containerPort: 3000
           args: ["npm", "run", "dev"]
