@@ -4,8 +4,10 @@
   <template v-for="(item, i) in array">
     <added-date :key="i" :item="item" />
   </template>
-  <p v-if="!isOpen" @click="changeFlag" class="text-blue-600 text-right cursor-pointer">もっと見る</p>
-  <p v-else @click="changeFlag" class="text-blue-600 text-right cursor-pointer">閉じる</p>
+  <template v-if="items.length > 5">
+    <p v-if="!isOpen" @click="changeFlag" class="text-blue-600 text-right cursor-pointer">もっと見る</p>
+    <p v-else @click="changeFlag" class="text-blue-600 text-right cursor-pointer">閉じる</p>
+  </template>
 </div>
 </template>
 

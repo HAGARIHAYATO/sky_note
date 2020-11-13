@@ -42,7 +42,6 @@ import { IStar, Result } from '*.vue'
 export default class StarShow extends Vue {
   item ? = {}
   async mounted() {
-    console.log(this.item)
   }
 }
 </script>

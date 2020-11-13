@@ -51,7 +51,6 @@ export default class SearchStarForm extends Vue {
     this.hourInfo = this.date.getHours()
   }
   async sendLocationInfo() {
-    console.log(this.dateInfo)
     this.$router.push({
       path: '/stars',
       query: {

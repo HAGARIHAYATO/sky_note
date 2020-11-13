@@ -25,7 +25,6 @@ module.exports = {
         min: obj.min,
         user_sub: obj.user_sub
       }).then((doc: any) => {
-        console.log(doc)
         return doc.id
       }).catch(err => {
         console.error(err)

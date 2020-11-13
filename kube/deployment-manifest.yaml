@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-Deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: sky_note
+  template:
+    metadata:
+      labels:
+        app: sky_note
+    spec:
+      containers:
+        - name: nuxt-app
+          image: 
+          ports:
+            - containerPort: 3000
+          args: ["npm", "run", "dev"]
