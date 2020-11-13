@@ -9,7 +9,7 @@ module.exports = {
     .where('user_sub', '==', params.user_sub)
     .get()
     .then((starArray: firebase.firestore.QuerySnapshot) => {
-      const array = starArray.docs.map(doc => doc.data());
+      const array = starArray.docs.map((doc: firebase.firestore.DocumentData) => doc.data());
       return array
     }).catch((err: Error) => {
       console.error(err)
@@ -27,7 +27,7 @@ module.exports = {
         user_sub: obj.user_sub
       }).then((doc: IResID) => {
         return doc.id
-      }).catch(err => {
+      }).catch((err: Error) => {
         console.error(err)
       })
   }
