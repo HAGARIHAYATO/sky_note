@@ -1,5 +1,6 @@
 import firebase from "firebase";
-
+import dotenv from "dotenv";
+dotenv.config()
 
 module.exports = {
   firestoreInit: function() {
